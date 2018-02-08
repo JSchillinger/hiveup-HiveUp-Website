@@ -25,3 +25,9 @@ All the functions are in the PHP pages in the `functions/` folder.
 	    add_theme_support( 'custom-logo', $defaults );
 	}
 	add_action( 'after_setup_theme', 'themename_custom_logo_setup' );
+
+	function calculator_script_enqueue() {
+		wp_enqueue_script('retirement-calculator',get_template_directory() . '/js/retirement-calculator.js', array(),'1.0.0', true);
+		wp_enqueue_script('nlform',get_template_directory() . '/js/nlform.js', array(),'1.0.0', true);
+	}
+	add_action('wp_enqueue_scripts.js','calculator_script_enqueue');

@@ -31,6 +31,12 @@ function hiveup_enqueues() {
 	wp_register_script('hiveup-js', get_template_directory_uri() . '/theme/js/hiveup.js', false, null, true);
 	wp_enqueue_script('hiveup-js');
 
+	wp_register_script('nlform', get_template_directory_uri() . '/theme/js/nlform.js', false, null, true);
+	wp_enqueue_script('nlform');
+
+	wp_register_script('retirement-calculator', get_template_directory_uri() . '/theme/js/retirement-calculator.js', false, null, true);
+	wp_enqueue_script('retirement-calculator');
+
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
