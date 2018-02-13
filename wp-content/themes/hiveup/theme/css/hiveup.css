@@ -635,8 +635,18 @@ HOME PAGE
   margin-top: 45px;
 }
 
+.filter-close {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  width: 60px;
+  font-size: 0.4em;
+  color: #888888;
+  cursor: pointer;
+}
+
 .home .filter {
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0);
   border-radius: 3px;
   margin: 0px;
   max-height: 160px;
@@ -644,7 +654,7 @@ HOME PAGE
   -webkit-transform: translate(0, -160px);
   transform: translate(0, -160px); */
   padding: 1.5rem 0;
-  color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0);
   transition: all 200ms;
   overflow: hidden;
 }
@@ -661,7 +671,7 @@ HOME PAGE
 }
 
 .home .filter .form-control {
-  opacity: 0.1;
+  opacity: 0;
   background: none;
 }
 
@@ -680,9 +690,9 @@ HOME PAGE
 
 .home .filter .btn-primary,
 .home .filter input[type="search"] {
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0);
   background: none;
-  color: rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0);
 }
 
 .home .filter.active .btn-primary,
@@ -1688,6 +1698,11 @@ MEDIA QUERIES
 @media (max-width: 767px) {
   .hidden-sm {
     display: none;
+  }
+
+  .home .filter.active {
+    margin-top: -300px;
+    z-index: 1000;
   }
 
   .navbar-nav {

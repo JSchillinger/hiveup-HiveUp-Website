@@ -1,10 +1,14 @@
-(function ($) {
+ (function ($) {
 
 	'use strict';
 
 	$(document).ready(function() {
 
 		$('.filter-title').click(function(){
+    	$('.filter').toggleClass("active");
+		});
+
+		$('.filter-close').click(function(){
     	$('.filter').toggleClass("active");
 		});
 
