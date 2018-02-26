@@ -86,3 +86,12 @@ function create_type_taxonomy() {
 		)
 	);
 }
+
+function SearchFilter($query) {
+if ($query->is_search) {
+$query->set('post_type', 'page');
+}
+return $query;
+}
+
+add_filter('pre_get_posts','SearchFilter');

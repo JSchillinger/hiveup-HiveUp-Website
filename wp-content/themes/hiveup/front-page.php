@@ -53,7 +53,7 @@
         <div class="filter hidden-sm">
           <?php echo do_shortcode( '[searchandfilter fields="category,search,post-type" types="radio,checkbox,select" hierarchical=",1" hide_empty=",1,1" class="" headings=",Find results for...,I am in the mood for...,Post Format" submit_label="Filter"]
           '); ?>
-          <div class="filter-title">Close</div>
+          <div class="filter-close">Close</div>
         </div>
 
       </div>
