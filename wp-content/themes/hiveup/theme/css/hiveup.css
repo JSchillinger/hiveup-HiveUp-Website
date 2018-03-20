@@ -170,6 +170,17 @@ nav.open {
   box-shadow: 0 0 50px rgba(0,0,0,.25);
 }
 
+.hiveup-wordmark {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.6em;
+  line-height: 1em;
+  position: relative;
+  top: 5px;
+  margin-left: 0.5em;
+  display: inline-block;
+}
+
 .navbar .custom-logo {
   width: 45px;
 }
@@ -480,7 +491,9 @@ HOME PAGE
 }
 
 #hero .hero-content {
-  height: 100vh;
+  height: 85vh;
+  min-height: 700px;
+  text-align: center;
 }
 
 #hero .logo {
@@ -505,7 +518,9 @@ HOME PAGE
 }
 
 #hero h1 {
-  color: #FFF;
+  color: #2A4251;
+  font-weight: 100;
+  margin-top: -235px;
 }
 
 #hero .navbar-light .navbar-nav .nav-link {
@@ -577,21 +592,26 @@ HOME PAGE
 }
 
 .home #hero {
-  background-image: url('../img/hero-bg3.jpg');
+  background-image: url('../img/lighthouse-hero.svg');
   background-repeat: no-repeat;
   position: relative;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  animation: grayOut 6s;
+  background-position-y: 50vh;
+  /*nimation: grayOut 6s;*/
 }
 
 .home #hero:before {
   content: '';
   position: absolute;
   top: 0;
+  z-index: -1;
   width:  100%;
   height: 100vh;
   background: rgba(0,0,0,0.2);
+  background: #00b09b;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E7FEFF, #FFFDF5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E7FEFF, #FFFDF5);  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   /* -webkit-clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
   clip-path: polygon(0 0, 100% 0, 79% 100%, 0% 100%);
    Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f2f2f2+0,bdccd4+100
@@ -657,6 +677,12 @@ HOME PAGE
   color: rgba(255,255,255,0);
   transition: all 200ms;
   overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .filter select.form-control:not([size]):not([multiple]) {
@@ -708,10 +734,12 @@ HOME PAGE
   color: inherit;
   max-height: 1000px;
   background: white;
-  -ms-transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  transform: translate(0, 0);
+  -ms-transform: translate(0, -20px);
+  -webkit-transform: translate(0, -20px);
+  transform: translate(0, -20px);
   transition: all 200ms;
+  display: block;
+  pointer-events: all;
 }
 
 .home .filter.active label,
@@ -1497,7 +1525,7 @@ MEDIA QUERIES
   h6 { }
 
   #hero h1 {
-    font-size: 4em;
+    font-size: 3em;
   }
 
   #hero h1, #hero h3 {
@@ -1505,13 +1533,13 @@ MEDIA QUERIES
   }
 
   .home #hero {
-    background-size: 140%;
+    background-position-y: 100%;
   }
 
   .home .filter.active {
     -ms-transform: translate(0, 0);
-    -webkit-transform: translate(0,-85px);
-    transform: translate(0, -85px);
+    -webkit-transform: translate(0,100px);
+    transform: translate(0, 100px); /* was -85 */
   }
 
   .post-wrapper {
@@ -1520,15 +1548,15 @@ MEDIA QUERIES
   }
 
   .searchandfilter div ul li:nth-child(2):not(.cat-item) {
-    width: 60%;
+    width: 100%;
   }
 
   .searchandfilter div ul li:nth-child(3):not(.cat-item) {
-    width: 25%;
+    width: 100%;
   }
 
   .searchandfilter div ul li:nth-child(4):not(.cat-item) {
-    width: 15%;
+    width: 100%;
   }
 
   .es_button {
@@ -1611,8 +1639,13 @@ MEDIA QUERIES
     transition: .25s ease-in;
   } */
 
-  #hero .hero-content {
+  #hero h1 {
+    margin-top: 0;
+  }
 
+  #hero .hero-content {
+    height: 900px;
+    text-align: left;
   }
 
   .content-panel {
@@ -1690,8 +1723,20 @@ MEDIA QUERIES
 
   .home .filter.active {
     -ms-transform: translate(0, 0);
-    -webkit-transform: translate(0,-85px);
-    transform: translate(0, -85px);
+    -webkit-transform: translate(0,150px);
+    transform: translate(0, 150px); /* was -85 */
+  }
+
+  .searchandfilter div ul li:nth-child(2):not(.cat-item) {
+    width: 60%;
+  }
+
+  .searchandfilter div ul li:nth-child(3):not(.cat-item) {
+    width: 25%;
+  }
+
+  .searchandfilter div ul li:nth-child(4):not(.cat-item) {
+    width: 15%;
   }
 }
 
@@ -1701,7 +1746,7 @@ MEDIA QUERIES
   }
 
   .home .filter.active {
-    margin-top: -300px;
+    //margin-top: -300px;
     z-index: 1000;
   }
 

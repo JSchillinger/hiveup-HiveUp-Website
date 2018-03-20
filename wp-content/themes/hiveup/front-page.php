@@ -6,7 +6,8 @@
     <div class="container-fluid">
       <div class="logo">
         <img class="logo-mark" src="<?php echo get_bloginfo('template_url') ?>/theme/img/hiveup-logo.svg"/>
-        <img class="logo-text" src="<?php echo get_bloginfo('template_url') ?>/theme/img/hiveup-wordmark-white.svg"/>
+        <!-- <img class="logo-text" src="<?php echo get_bloginfo('template_url') ?>/theme/img/hiveup-wordmark.svg"/> -->
+        <span class="hiveup-wordmark">Hive Up</span>
       </div>
 
       <div class="mobile-menu">
@@ -38,24 +39,23 @@
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row hero-content align-items-center">
         <!-- <h2>Tips Worth Sharing</h2>
         <p class="lead">We encourage you to take a moment to think about all the dreams you've ever had.  Overwhelmed and maybe even a little pessimistic you would ever achieve them?</p>
         <p>At Hive Up, we aim to equip you with the tools, knowledge and resources to make aid you in making informed financial decisions. We do this by making health and finance advice fun and educational.</p>
         <p>Don't worry, we've made our material visually appetizing and easily understandable to help get you inspired?</p> -->
-      <div class="col-md-12">
-        <h1>Empowering you
-          <br>with the knowledge</h1>
+      <div class="mr-auto ml-auto col-sm-10 col-md-10 col-lg-8">
+        <h1>Navigate your
+          <br>financial future with clarity</h1>
 
         <div class="filter-title button button-primary">Let's get started</div>
+      </div>
 
-        <div class="filter hidden-sm">
-          <?php echo do_shortcode( '[searchandfilter fields="category,search,post-type" types="radio,checkbox,select" hierarchical=",1" hide_empty=",1,1" class="" headings=",Find results for...,I am in the mood for...,Post Format" submit_label="Filter"]
-          '); ?>
-          <div class="filter-close">Close</div>
-        </div>
-
+      <div class="filter">
+        <?php echo do_shortcode( '[searchandfilter fields="category,search,post-type" types="radio,checkbox,select" hierarchical=",1" hide_empty=",1,1" class="" headings=",Find results for...,I am in the mood for...,Post Format" submit_label="Filter"]
+        '); ?>
+        <div class="filter-close">Close</div>
       </div>
 
       <div class="scrolldown">
